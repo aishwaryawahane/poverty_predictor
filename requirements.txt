@@ -9,3 +9,6 @@ black
 yapf
 python-gitlab
 twine
+jupyter
+geopandas
+numpy
