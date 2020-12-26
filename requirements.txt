@@ -12,3 +12,5 @@ twine
 jupyter
 geopandas
 numpy
+rasterio
+matplotlib
