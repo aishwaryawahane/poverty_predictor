@@ -14,3 +14,5 @@ geopandas
 numpy
 rasterio
 matplotlib
+import-ipynb
+seaborn
