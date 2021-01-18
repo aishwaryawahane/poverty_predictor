@@ -16,3 +16,4 @@ rasterio
 matplotlib
 import-ipynb
 seaborn
+pandas-profiling
