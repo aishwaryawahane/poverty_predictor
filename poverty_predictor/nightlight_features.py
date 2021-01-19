@@ -29,4 +29,4 @@ def get_nighttime_features(raster_data, dhs_sample):
     luminosity_100 = np.asarray(luminosity_100)
     mean_ = np.mean(luminosity_100)
     median_ = np.median(luminosity_100)
-    return pd.Series({'Cluster Number': clust_n, 'Mean': mean_, 'Median': median_, 'Wealth Index': wealth_idx})
+    return pd.Series({'Cluster Number': clust_n, 'Mean_nightlight': mean_, 'Median_nightlight': median_, 'Wealth Index': wealth_idx})
