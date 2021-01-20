@@ -13,7 +13,7 @@
 Predicting poverty through data sources like satellite imagery is comparatively inexpensive. 
 - Upload the satellite imagery to the site
 - The model will analyse the image for nighttime luminosity features
-- The model predicts the analysed wealth index of the region
+- The model predicts the wealth index of the analysed region
 
 ## Data Sourcing
 - Measure of poverty - Average wealth index of each cluster.
