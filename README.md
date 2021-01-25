@@ -1,6 +1,6 @@
 # Predicting poverty through satellite imagery
 
-Inspired by the project - Jean et. al. (2016) paper on [Combining satellite imagery and machine learning to predict poverty](http://sustain.stanford.edu/predicting-poverty)
+Inspired by the project - [Combining satellite imagery and machine learning to predict poverty](http://sustain.stanford.edu/predicting-poverty)
 
 ## Project domain
 An attempt to tackle global issues through Geospatial domain & Machine learning
