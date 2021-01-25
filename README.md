@@ -1,11 +1,12 @@
-# Poverty Prediction through Satellite Imagery
+# Analysis of poverty data using satellite imagery
 
-## Project domain: An attempt to tackle global issues through Geospatial domain & Machine learning
+## Project domain
+An attempt to tackle global issues through Geospatial domain & Machine learning
 - UN’s one of the topmost goals is to reduce poverty by 2030.
 - This tool is an attempt to help them achieve this goal. 
 - Using Machine learning & analysis of geospatial data,    we could predict poverty through satellite imagery.
 
-## Problem
+## The Problem
 - Most countries don’t collect much data.
 - Scaling up traditional survey based data collection methods are expensive.
 
