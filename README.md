@@ -30,3 +30,5 @@ The first step to realizing a model to predict poverty over a region was to coll
 - I obtained the nightlight imagery corresponding to the DHS surveyed years through Earth Observation Group, NOAA/NCEI databsae on their [website](https://eogdata.mines.edu/dmsp/downloadV4composites.html).
 - After obtaining the nightlight imagery, I built a script to find average nighttime intensity for each cluster using the DHS shapefile and rasterio python library.
 - Finally I conducted a basic analysis through data visualization and pandas profile to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
+
+![Correlation of Wealth Score and Nighttime Intensity](https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/Correlation.png)
