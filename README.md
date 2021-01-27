@@ -22,16 +22,9 @@ Predicting poverty through data sources like satellite imagery is reliable and i
 The first step to creating a model was to collect and analyse the data.
 
 ## High level overview of analysis
-- Firstly, I had to decide which countries could be considered for training the model. I chose Rwanda since the country has consistently surveyed datasets.
-- Next, among measures like Average wealth index, expenditure data, etc., I chose wealth index factor score from DHS Surveys as the measure of poverty, for each cluster (smallest region, whose co-ordinates are provided by the public datasets). For the access to these datasets, I applied to DHS [official site](https://dhsprogram.com/Data/) and downloaded household and GPS datasets for the year 2010.
+- Firstly, I had to decide which countries could be considered for training the model. I chose Malawi since the country has consistently surveyed datasets.
+- Next, among measures like Average wealth index, expenditure data, etc., I chose wealth index factor score from DHS Surveys as the measure of poverty, for each cluster (smallest region, whose co-ordinates are provided by the public datasets). For the access to these datasets, I applied to DHS [official site](https://dhsprogram.com/Data/) and downloaded household and GPS datasets for the year 2015.
 - The best part about DHS datasets is that they provide files in various formats to make analysis easier.
 - After merging the survey and GPS datasets into one, with the columns - cluster number, location co-ordinates and wealth index factor score, I conducted a basic analysis using [Pandas attributes & methods](https://pandas.pydata.org/docs/user_guide/index.html).
 - Now that I had the 'ground truth' to compare my predictions to (that I'd work on in the near future), the next step was to download the nighttime and daytime satellite imagery. The reason we require both - standard ML techniques to interpret imagery are reliable only when we have lots of labeled images. However, in this case daytime imagery are difficult to be categorized as rich/poor. Therefore, we will use nightlight satellite imagery to help us find features in the daytime satellite imagery that correlate with poverty measure.
 - I obtained the nightlight imagery corresponding to the DHS surveyed years through Earth Observation Group, NOAA/NCEI database on their [website](https://eogdata.mines.edu/dmsp/downloadV4composites.html).
-- After obtaining the nightlight imagery, I built a script to find average nighttime intensity for each cluster using the DHS shapefile and rasterio python library.
-- Finally I conducted a basic analysis through data visualization and pandas profile to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
-
-<p float="left">
-  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/Correlation.png" width="400" />
-  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_luminosity.png" width="500" />
-</p>
