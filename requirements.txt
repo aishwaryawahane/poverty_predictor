@@ -18,3 +18,4 @@ import-ipynb
 seaborn
 pandas-profiling
 GDAL
+statsmodels
