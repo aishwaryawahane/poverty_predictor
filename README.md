@@ -31,6 +31,6 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 - Finally, I conducted a basic analysis through data visualization and pandas profile to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
 
 <p float="left">
-  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/Correlation.png" width="400" />
+  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/Correlation.png" width="350" />
   <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_luminosity.png" width="500" />
 </p>
