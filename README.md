@@ -27,7 +27,7 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 - DHS data - after merging the survey and GPS datasets into one, with the columns - cluster number, location co-ordinates and wealth index factor score, I conducted a basic analysis using [Pandas attributes & methods](https://pandas.pydata.org/docs/user_guide/index.html).
 - Nighttime imagery - I built a script to find the average nighttime intensity for each cluster using the DHS shapefile (GPS data) and rasterio python library.
 
-## The final step
+## Step 4: Visual analysis (we're not done yet! There is much more to solidifying our analysis!)
 - Finally, I conducted a basic analysis through data visualization and pandas profile to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
 
 <p float="left">
