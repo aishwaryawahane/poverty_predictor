@@ -13,8 +13,9 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 - Scaling up traditional survey based data collection methods are expensive.
 
 ## Step 1: Understanding the problem
-- Firstly, I had to decide which countries could be considered for the analysis. I chose Rwanda since the country has consistently surveyed datasets.
-- Next, among measures like Average wealth index, expenditure data, etc., I chose wealth index factor score from DHS Surveys as the measure of poverty, for each cluster (smallest region, whose co-ordinates are provided by the public datasets). 
+- Firstly, I had to clearly define the question I am attempting to answer - Could satellite imagery be used to predict poverty?
+- The next step was to decide the data source for analysis. Which countries could be considered for the analysis? I chose Rwanda since the country has consistently surveyed datasets.
+- Also, among measures like Average wealth index, expenditure data, etc., which measure should be used to predict poverty? Most reliable sources of measure are scores from LSMS data or DHS data. I chose the wealth index factor score from DHS Surveys for each cluster, which are the smallest regions in Rwanda whose co-ordinates are provided by the public datasets.
 
 ## Step 2: Data Collection
 - I applied to DHS [official site](https://dhsprogram.com/Data/) and downloaded household and GPS datasets for the year 2010. The best part about DHS datasets is that they provide files in various formats to make analysis easier.
