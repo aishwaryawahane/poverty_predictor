@@ -1,31 +1,23 @@
-import rasterio
-import numpy as np
+import geoio
+import math
 import pandas as pd
+import numpy as np
 
-def read_raster(raster_file):
-    raster_data = rasterio.open(raster_file)
-    return raster_data
+def create_square(lat, lon, s=10):
+    """Creates a s km x s km square centered on (lat, lon)"""
+    v = (180/math.pi)*(500/6378137)*s
+    return lat - v, lon - v, lat + v, lon + v
 
-def get_nighttime_features(raster_data, dhs_sample):
-    clust_n, lat, long, wealth_idx = dhs_sample
-    lon_idx, lat_idx = raster_data.index(long, lat)
+def nightlight_intensity_calc(tiff_path, dhs_row):
+    clust_n, lat, lon, wealth_idx = dhs_row
+    min_lat, min_lon, max_lat, max_lon = create_square(lat, lon)
 
-    # Getting data for all the raster bands
-    bands_array = raster_data.read()
-    n_bands, rows, columns = bands_array.shape
+    tiff = geoio.GeoImage(tiff_path)
+    tiff_array = np.squeeze(tiff.get_data())
 
-    # Generate 10*10 pixels - each pixel is roughly 1km & we need 10km*10km area
-    left_idx = lon_idx - 5
-    right_idx = lon_idx + 4
-    up_idx = lat_idx - 5
-    low_idx = lat_idx + 4
+    xminPixel, ymaxPixel = tiff.proj_to_raster(min_lon, min_lat)
+    xmaxPixel, yminPixel = tiff.proj_to_raster(max_lon, max_lat)
+    xminPixel, yminPixel, xmaxPixel, ymaxPixel = int(xminPixel), int(yminPixel), int(xmaxPixel), int(ymaxPixel)
+    intensity_mean = tiff_array[yminPixel:ymaxPixel,xminPixel:xmaxPixel].mean()
 
-    luminosity_100 = []
-    for i in range(left_idx, right_idx + 1):
-        for j in range(up_idx, low_idx + 1):
-            # Get the luminosity of this pixel
-            luminosity = bands_array.T[j, i, 0]
-            luminosity_100.append(luminosity)
-    luminosity_100 = np.asarray(luminosity_100)
-    mean_ = np.mean(luminosity_100)
-    return pd.Series({'Cluster Number': clust_n, 'Mean_nightlight': mean_, 'Wealth Score': wealth_idx})
+    return pd.Series({'Cluster Number': clust_n, 'Mean_nightlight': intensity_mean, 'Wealth Score': wealth_idx})
