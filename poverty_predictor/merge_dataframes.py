@@ -1,5 +1,5 @@
 # Importing necessary libraries
-from .nightlight_features import read_raster, get_nighttime_features
+from .nightlight_features import create_square, nightlight_intensity_calc
 import pandas as pd
 
 
@@ -19,6 +19,5 @@ def merge_dhs(gps_data, survey_data):
     return dhs_df
 
 def merge_night_dhs(dhs_df, tiff_path):
-    raster_data = read_raster(tiff_path)
-    dhs_nightlight_df = dhs_df.apply(lambda x: get_nighttime_features(raster_data, [x['Cluster Number'], x['Latitude'], x['Longitude'], x['Wealth Score']]), axis=1)
+    dhs_nightlight_df = dhs_df.apply(lambda x: nightlight_intensity_calc(tiff_path, [x['Cluster Number'], x['Latitude'], x['Longitude'], x['Wealth Score']]), axis=1)
     return dhs_nightlight_df
