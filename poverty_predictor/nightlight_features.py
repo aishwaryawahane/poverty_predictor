@@ -20,4 +20,4 @@ def nightlight_intensity_calc(tiff_path, dhs_row):
     xminPixel, yminPixel, xmaxPixel, ymaxPixel = int(xminPixel), int(yminPixel), int(xmaxPixel), int(ymaxPixel)
     intensity_mean = tiff_array[yminPixel:ymaxPixel,xminPixel:xmaxPixel].mean()
 
-    return pd.Series({'Cluster Number': clust_n, 'Mean_nightlight': intensity_mean, 'Wealth Score': wealth_idx})
+    return pd.Series({'Cluster_Number': clust_n, 'Mean_Nightlights': intensity_mean, 'Wealth_Score': wealth_idx})
