@@ -30,6 +30,6 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 ## Step 4: Conducting EDA
 - Finally, I conducted a basic analysis through data visualization and built a statistical model to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
 
-<img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_meannightlights.png" width="700" />
+<img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_meannightlights.png" width="600" />
 
 By conducting EDA, a relation between mean nightlight intensity and wealth score is confirmed. Thus, in future, poverty prediction through satellite imagery could be a successful method!
