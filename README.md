@@ -13,7 +13,7 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 - Scaling up traditional survey based data collection methods are expensive.
 
 ## Step 1: Understanding the problem
-- Firstly, I had to clearly define the question I am attempting to answer - Could satellite imagery be used to predict poverty?
+- Firstly, I wanted to clearly define the question I was attempting to answer - Could satellite imagery be used to predict poverty?
 - The next step was to decide the data source for analysis. Which countries could be considered for the analysis? I chose Rwanda since the country has consistently surveyed datasets.
 - Also, among measures like Average wealth index, expenditure data, etc., which measure should be used to predict poverty? Most reliable sources of measure are scores from LSMS data or DHS data. I chose the wealth index factor score from DHS Surveys for each cluster, which are the smallest regions in Rwanda whose co-ordinates are provided by the public datasets.
 
@@ -25,12 +25,11 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 ## Step 3: Data preprocessing/cleaning
 - This is an essential step for getting reliable results to our analysis. Also, we're producing certain features, such as nighttime luminosity to help solidify our analysis.
 - DHS data - after merging the survey and GPS datasets into one, with the columns - cluster number, location co-ordinates and wealth index factor score, I conducted a basic analysis using [Pandas attributes & methods](https://pandas.pydata.org/docs/user_guide/index.html).
-- Nighttime imagery - I built a script to find the average nighttime intensity for each cluster using the DHS shapefile (GPS data) and rasterio python library.
+- Nighttime imagery - I built a script to find the average nighttime intensity for each cluster using the DHS shapefile (GPS data) and geoio python library.
 
 ## Step 4: Conducting EDA
-- Finally, I conducted a basic analysis through data visualization and pandas profile to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
+- Finally, I conducted a basic analysis through data visualization and built a statistical model to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
 
-<p float="left">
-  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/Correlation.png" width="300" />
-  <img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_luminosity.png" width="400" />
-</p>
+<img src="https://github.com/aishwaryawahane/poverty_predictor/blob/main/graphs/Rwanda/wealthscore_meannightlights.png" width="700" />
+
+By conducting EDA, a relation between mean nightlight intensity and wealth score is confirmed. Thus, in future, poverty prediction through satellite imagery could be a successful method!
