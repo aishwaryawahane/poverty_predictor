@@ -25,7 +25,7 @@ An attempt to tackle global issues through Geospatial domain & Data Science
 ## Step 3: Data preprocessing/cleaning
 - This is an essential step for getting reliable results to our analysis. Also, we're producing certain features, such as nighttime luminosity to help solidify our analysis.
 - DHS data - after merging the survey and GPS datasets into one, with the columns - cluster number, location co-ordinates and wealth index factor score, I conducted a basic analysis using [Pandas attributes & methods](https://pandas.pydata.org/docs/user_guide/index.html).
-- Nighttime imagery - I built a script to find the average nighttime intensity for each cluster using the DHS shapefile (GPS data) and geoio python library.
+- Nighttime imagery - I built a script to find the average nighttime intensity for each cluster using the DHS shapefile (GPS data) and [geoio](https://pypi.org/project/geoio/) python library.
 
 ## Step 4: Conducting EDA
 - Finally, I conducted a basic analysis through data visualization and built a statistical model to know if there exists a correlation between the average nighttime intensity of each cluster and their respective wealth index factor score.
